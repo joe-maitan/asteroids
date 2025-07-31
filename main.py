@@ -28,6 +28,8 @@ def main():
         # fill the screen with a color to wipe away anything from last frame
         screen.fill("black")
 
+        player.update(dt)
+
         # RENDER YOUR GAME HERE
         player.draw(screen)
 
