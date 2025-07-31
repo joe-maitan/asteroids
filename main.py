@@ -18,6 +18,11 @@ def main():
 
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 
+    updateable = pygame.sprite.Group()
+    drawables = pygame.sprite.Group()
+
+    Player.containers = (updateable, drawables)
+
     while running:
         # poll for events
         # pygame.QUIT event means the user clicked X to close your window
@@ -28,10 +33,11 @@ def main():
         # fill the screen with a color to wipe away anything from last frame
         screen.fill("black")
 
-        player.update(dt)
+        updateable.update(dt)
 
         # RENDER YOUR GAME HERE
-        player.draw(screen)
+        for drawable in drawables:
+            drawable.draw(screen)
 
         # flip() the display to put your work on screen
         pygame.display.flip()
