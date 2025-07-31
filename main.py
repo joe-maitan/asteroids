@@ -1,6 +1,8 @@
 import pygame
 
+from player import *
 from constants import *
+
 
 def main():
     print("Starting Asteroids!")
@@ -11,7 +13,10 @@ def main():
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     clock = pygame.time.Clock()
+    dt = 0
     running = True
+
+    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 
     while running:
         # poll for events
@@ -24,11 +29,12 @@ def main():
         screen.fill("black")
 
         # RENDER YOUR GAME HERE
+        player.draw(screen)
 
         # flip() the display to put your work on screen
         pygame.display.flip()
 
-        clock.tick(60)  # limits FPS to 60
+        dt = clock.tick(60) / 1000 # limits FPS to 60
 
     pygame.quit()
 
