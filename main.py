@@ -2,6 +2,7 @@ import pygame
 
 from player import *
 from constants import *
+from asteroid import *
 
 
 def main():
@@ -20,8 +21,10 @@ def main():
 
     updateable = pygame.sprite.Group()
     drawables = pygame.sprite.Group()
+    asteroids = pygame.sprite.Group()
 
     Player.containers = (updateable, drawables)
+    Asteroid.containers = (asteroids, updateable, drawable)
 
     while running:
         # poll for events
