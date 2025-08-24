@@ -1,9 +1,0 @@
-[project]
-name = "asteroids"
-version = "0.1.0"
-description = "Arcade classic Asteroids, coded in Python with Pygame!"
-readme = "README.md"
-requires-python = ">=3.12"
-dependencies = [
-    "pygame==2.6.1",
-]

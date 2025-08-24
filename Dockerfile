@@ -1,10 +1,16 @@
 FROM python:3.12-slim
 
-RUN apt update && apt install -y curl && \
-    curl -LsSf https://astral.sh/uv/install.sh | sh && \
-    mv /root/.cargo/bin/uv /usr/local/bin/
+RUN apt update && \
+    useradd -m appuser
+
+USER appuser
 
 WORKDIR /asteroids
+
+COPY requirements.txt .
+
+RUN pip install --no-cache-dir -r requirements.txt
+
 COPY . .
 
-CMD ["uv", "run", "main.py"]
+CMD ["python3", "main.py"]

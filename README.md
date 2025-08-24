@@ -4,31 +4,11 @@ Arcade classic Asteroids, coded in Python with Pygame!
 
 ## How to run the code
 
-### Docker:
-1. Build the image
-  ```
-  docker build -t asteroids-app .
-  ```
-2. Run the container
-  ```
-  docker run --rm -it asteroids-app
-  ```
-
-  ```--rm``` automatically removes the container after your exit. 
-  ```-it``` runs the container in interactive mode.
-
-### Running on your bare metal:
-I used ```uv``` as the package manager for this project. If you do not have it installed, you can check out how to install it on your system [here](https://github.com/astral-sh/uv)
-
-After installing uv and downloading/cloning the repo. You can run the code by doing the following:
+I did try to make a Dockerfile for this project. But I ran into the issue of trying to run a GUI in a container.
 
 1. Create the venv
   ```
   python3 -m .venv
-  ```
-  or
-  ```
-  uv venv
   ```
 
 2. Activate the venv
@@ -36,9 +16,14 @@ After installing uv and downloading/cloning the repo. You can run the code by do
   source .venv/bin/activate
   ```
 
+3. Install the requirements.txt
+  ```
+  pip install -r requirements.txt
+  ```
+
 3. Run the main program
   ```
-  uv run main.py
+  python3 main.py
   ```
 
 Enjoy!
