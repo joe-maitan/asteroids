@@ -2,10 +2,6 @@
 
 Arcade classic Asteroids, coded in Python with Pygame!
 
-## How to run the code
-
-I did try to make a Dockerfile for this project. But I ran into the issue of trying to run a GUI in a container.
-
 1. Create the venv
   ```
   python3 -m .venv
